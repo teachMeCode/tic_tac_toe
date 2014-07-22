@@ -1,0 +1,32 @@
+<html ng-app>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style_example.css">
+  <script src="angular.min.js"></script>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="script_example.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Let's Play Tic Tac Toe</h1>
+  </header>
+  <div>
+    <p>Who is player 1? <input ng-model="player1" type="text" placeholder="Enter a name please"/></p>
+    <p>Who is player 2? <input ng-model="player2"type="text" placeholder="Enter a name please"></p>
+    <p ng-show="player1" ng-show="player2"><strong>{{player1}}</strong> is X  <strong>{{player2}}</strong> is O</p>
+    <p ng-hide="player1" ng-hide="player2"><strong>{{player1}}</strong> is X  <strong>{{player2}}</strong> is O</p>
+  </div>
+  <div class="container">
+    <div id="box1"><input type="button" id="btn1" onclick="clickBtn('btn1')"></div>
+    <div id="box2"><input type="button" id="btn2" onclick="clickBtn('btn2')"/></div>
+    <div id="box3"><input type="button" id="btn3" onclick="clickBtn('btn3')"/></div>
+    <div id="box4"><input type="button" id="btn4" onclick="clickBtn('btn4')"></div>
+    <div id="box5"><input type="button" id="btn5" onclick="clickBtn('btn5')"/></div>
+    <div id="box6"><input type="button" id="btn6" onclick="clickBtn('btn6')"/></div>
+    <div id="box7"><input type="button" id="btn7" onclick="clickBtn('btn7')"></div>
+    <div id="box8"><input type="button" id="btn8" onclick="clickBtn('btn8')"/></div>
+    <div id="box9"><input type="button" id="btn9" onclick="clickBtn('btn9')"/></div>
+  </div>
+</body>
+</html>
