@@ -1,0 +1,172 @@
+body {
+  /*font-family: helvetica;*/
+  font-family: 'Lobster', cursive;
+  /*font-family: 'Open Sans', sans-serif;*/
+}
+
+header {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  padding: 1px;  
+}
+
+header p {
+  font-size: 18px;
+}
+
+.container {
+ /* width: 90% auto;*/
+  height: 100%;
+  padding-top: 15px;
+  text-align: center;
+  background: #fff;
+}
+
+.container p {
+  text-align: center;
+}
+
+.player {
+  margin-top: 50px;
+  font-size: 30px;  
+}
+
+.player input {
+  padding: 5px;
+  font-size: 30px;
+}
+
+.player-1 {
+  width: 50%;
+  float: left;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.player-1 input {
+  font-size: 40px;
+  background-color: gray;
+  border: none;
+  text-align: center;
+  margin-top: 10px;
+  margin-left:5px;
+  font-family: 'Lobster', cursive;
+}
+
+.player-2 {
+  width: 50%;
+  float: left;
+  font-size: 40px;
+}
+
+.player-2 input {
+  font-size: 40px;
+  background-color: gray;
+  border: none;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Lobster', cursive;
+}
+
+.down-arrow {
+  margin-top:323px;
+  margin-bottom: 100px;
+}
+
+icon {
+
+}
+/*
+.icon:before {
+    content: "\e610";
+    content: "\e0";
+    color:#f16822;
+    color:white;
+    background-color: white;
+    text-align: center;
+    display: block;
+    width:100px;
+}*/
+
+.grid-section {
+    height: 100%;
+    padding-top: 175px;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #eee;
+  }
+
+.grid {
+  width: 333px;
+  height: 333px;
+  border:1px solid black;
+  /*display: inline;*/
+  background-color: black;
+  padding: 15px;
+  position: relative;
+  margin-left:450px;
+  
+}
+
+.grid input {
+  width: 100px;
+  height: 100px;
+  border:none;
+  font-size: 60px;
+  margin: 5px;
+  padding: 0px;
+  transition: 0s background-color;
+  font-family: 'Lobster', cursive;
+}
+
+.grid input:hover {
+  background-color: red;
+  transition-delay:.07s;
+}
+
+
+#box1 {
+  float: left;
+}
+
+#box2 {
+  float: left;
+}
+
+#box3 {
+  float: 
+}
+
+#box4 {
+  float: left;
+}
+
+#box5 {
+  float: left;
+}
+
+#box6 {
+  float: left;
+}
+
+#box7 {
+  float: left;
+}
+
+#box8 {
+  float: left;
+}
+
+#box9 {
+  float: left;
+}
+
+
+button {
+  background-color: white;
+  border:none;
+  color:#aaa;
+}
