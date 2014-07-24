@@ -3,24 +3,30 @@
 <head>
   <title></title>
   <!--CSS-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style_example_branch.css">
   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
   <link href='http://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <!--SCRIPT-->
-  <script src="angular.min.js"></script>
-  <script src="app.js"></script>
-  <script src="script.js"></script>
+  <!--SCRIPTS-->
+  <!--angular-->
+  <!-- <script src="angular.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+  <!--Firebase-->
+  <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+  <!--Other Stuff-->
+  <script src="app_example.js"></script>
+  <script src="script_example.js"></script>
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="scrolling-nav.js"></script>
 </head>
 <body ng-controller="myController">
-  <header>
-    <h1>Let's Play Tic Tac Toe</h1>
+  <header id="intro" class="page-scroll">
+    <h1>Let's Play Tic Tac Toe!</h1>
   </header>
-  <div id="#intro" class="container">
+  <div class="container">
     <div class="player-1">
       <p>Who is player 1? <input ng-model="player1" type="text" placeholder="Enter a name please"/></p>
       <div ng-show="player1" style="font-size:50px;"><p><strong>{{player1}}</strong> is X</p></div>
@@ -38,17 +44,21 @@
     </div> <!-- Down Arrow -->
   </div><!--Container-->
   <div class="grid-section">
+    <div>Clicks: <span id="clicker">0</span></div>
+    <div class="grid-left" ng-show="player1"><p>{{player1}} is X</p></div>
     <div id="grid-scroll" class="grid">
-      <div id="box1"><input type="button" id="btn1" onclick="clickBtn('btn1')"></div>
-      <div id="box2"><input type="button" id="btn2" onclick="clickBtn('btn2')"/></div>
-      <div id="box3"><input type="button" id="btn3" onclick="clickBtn('btn3')"/></div>
-      <div id="box4"><input type="button" id="btn4" onclick="clickBtn('btn4')"></div>
-      <div id="box5"><input type="button" id="btn5" onclick="clickBtn('btn5')"/></div>
-      <div id="box6"><input type="button" id="btn6" onclick="clickBtn('btn6')"/></div>
-      <div id="box7"><input type="button" id="btn7" onclick="clickBtn('btn7')"></div>
-      <div id="box8"><input type="button" id="btn8" onclick="clickBtn('btn8')"/></div>
-      <div id="box9"><input type="button" id="btn9" onclick="clickBtn('btn9')"/></div>
+      <div id="box1"><input type="button" id="btn1" ng-click="clickBtn('btn1')"></div>
+      <div id="box2"><input type="button" id="btn2" ng-click="clickBtn('btn2')"></div>
+      <div id="box3"><input type="button" id="btn3" ng-click="clickBtn('btn3')"></div>
+      <div id="box4"><input type="button" id="btn4" ng-click="clickBtn('btn4')"></div>
+      <div id="box5"><input type="button" id="btn5" ng-click="clickBtn('btn5')"></div>
+      <div id="box6"><input type="button" id="btn6" ng-click="clickBtn('btn6')"></div>
+      <div id="box7"><input type="button" id="btn7" ng-click="clickBtn('btn7')"></div>
+      <div id="box8"><input type="button" id="btn8" ng-click="clickBtn('btn8')"></div>
+      <div id="box9"><input type="button" id="btn9" ng-click="clickBtn('btn9')"></div>
     </div>
+    <div class="grid-right" ng-show="player2"><p>{{player2}} is O</p></div>
+    <div class="play-again page-scroll"><a href="#intro">Play again</div>
   </div>      
 </body>
 </html>

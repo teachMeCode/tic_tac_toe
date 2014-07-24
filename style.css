@@ -115,6 +115,7 @@ icon {
   width: 100px;
   height: 100px;
   border:none;
+  border-radius: 5px;
   font-size: 60px;
   margin: 5px;
   padding: 0px;
@@ -127,6 +128,20 @@ icon {
   transition-delay:.07s;
 }
 
+.grid-left {
+  float: left;
+  font-size: 30px;
+  margin-top:145px;
+  margin-left: 150px;
+}
+
+.grid-right {
+  float: right;
+  font-size: 30px;
+  margin-top: -220px;
+  margin-right: 150px;
+
+}
 
 #box1 {
   float: left;
@@ -164,6 +179,10 @@ icon {
   float: left;
 }
 
+.play-again {
+  margin-top: 20px;
+  font-size: 20px;
+}
 
 button {
   background-color: white;
