@@ -22,16 +22,27 @@ header p {
   height: 100%;
   padding-top: 15px;
   text-align: center;
-  background: #fff;
+  background: #0CE890;
+  /*background-image: url("img/xoxo.png");
+  background-repeat: repeat;
+  z-index: -1;
+  opacity:.85;
+  -khtml-opacity:.85; 
+  -moz-opacity:.85; 
+  -ms-filter:"alpha(opacity=80)";
+  filter:alpha(opacity=80);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.85);*/
 }
 
 .container p {
   text-align: center;
 }
 
+
 .player {
   margin-top: 50px;
   font-size: 30px;  
+  color: black;
 }
 
 .player input {
@@ -44,12 +55,15 @@ header p {
   float: left;
   font-size: 40px;
   margin-bottom: 5px;
+  /*background-color: white;*/
+  color:black;
 }
 
 .player-1 input {
   font-size: 40px;
   background-color: gray;
   border: none;
+  border-radius: 5px;
   text-align: center;
   margin-top: 10px;
   margin-left:5px;
@@ -66,6 +80,7 @@ header p {
   font-size: 40px;
   background-color: gray;
   border: none;
+  border-radius: 5px;
   text-align: center;
   margin-top: 10px;
   font-family: 'Lobster', cursive;
@@ -74,6 +89,12 @@ header p {
 .down-arrow {
   margin-top:323px;
   margin-bottom: 100px;
+}
+
+button {
+  background-color: #0CE890;;
+  border:none;
+  color:#aaa;
 }
 
 icon {
@@ -96,7 +117,7 @@ icon {
     padding-top: 175px;
     padding-bottom: 100px;
     text-align: center;
-    background: #eee;
+    background: #0cd2e8;
   }
 
 .grid {
@@ -105,6 +126,7 @@ icon {
   border:1px solid black;
   /*display: inline;*/
   background-color: black;
+  border-radius: 10px;
   padding: 15px;
   position: relative;
   margin-left:450px;
@@ -124,7 +146,7 @@ icon {
 }
 
 .grid input:hover {
-  background-color: red;
+  background-color: #e80c64;
   transition-delay:.07s;
 }
 
@@ -184,8 +206,7 @@ icon {
   font-size: 20px;
 }
 
-button {
-  background-color: white;
-  border:none;
-  color:#aaa;
+.play-again a {
+  text-decoration: none !important;
+  color: #e80c74;
 }
