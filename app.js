@@ -6,19 +6,31 @@ myApp.controller("myController", function ($scope, $firebase) {
 
     var tttRef = new Firebase("https://bsp-wdi-ttt.firebaseio.com");
 
+    $scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
     $scope.remoteClickCount = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickCount"));
     $scope.remoteClickCount.$bind($scope, "clickCount");
     $scope.$watch('clickCount', function(){
         console.log("Rad!");
     });
     
+    // $scope.remoteClickBtn.$bind($scope,"clickBtn");
+    // $scope.$watch('clickBtn', function(){
+    //     console.log("cool");
+    // });
+
+    // $scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
+    // $scope.remoteClickBtn = $bind($scope, "clickBtn");
+    // $scope.$watch('clickBtn', function(){
+
+    // });
+    
     $scope.ttt = $firebase(tttRef);
 
 
-    $scope.updateClick  = function() {
-        tttRef.push({player1:$scope.player1});
-        tttRef.push({player2:$scope.player2});
-    }; //End of function
+    // $scope.updateClick  = function() {
+    //     tttRef.push({player1:$scope.player1});
+    //     tttRef.push({player2:$scope.player2});
+    // }; //End of function
 
 // -------------- Player variables ----------------------------------------------------------
 
@@ -40,14 +52,14 @@ myApp.controller("myController", function ($scope, $firebase) {
         document.getElementById(btn).value = "X";
         document.getElementById(btn).disabled = "disabled"; //This is to prevent multiple clicks
         $scope.player -=1; //This causes player not to be 0
-        $scope.clickCount +=1;
+        $scope.clickCount +=1; //This is incrementing the click counter
         document.getElementById("clicker").innerHTML = $scope.clickCount;
         $scope.winner();
       } else {
         document.getElementById(btn).value = "O";
         document.getElementById(btn).disabled = "disabled"; //This is to prevent multiple clicks
         $scope.player +=1; //This causes player to be 1 again
-        $scope.clickCount +=1;
+        $scope.clickCount +=1; //This is incrementing the click counter
         document.getElementById("clicker").innerHTML = $scope.clickCount;
         $scope.winner(); 
         } 
@@ -58,7 +70,7 @@ myApp.controller("myController", function ($scope, $firebase) {
       if (document.getElementById("btn1").value == "X" && 
         document.getElementById("btn2").value == "X" && 
         document.getElementById("btn3").value == "X" ) { 
-        alert($scope.player1 + " is the Winner!", "WINNER ALERT");
+        alert($scope.player1 + " is the Winner!");
         alert("Game Over! Please Play again : )");
         clearBoard();
         resetPlayer();
