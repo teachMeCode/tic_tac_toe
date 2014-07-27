@@ -1,6 +1,14 @@
+## Updated 7/23/2014
+Project 1 at General Assembly LA: Tic Tac Toe
 
-Project 1 at General Assembly LA:
+Overview:
 
-This project is currently incomplete. 
+This is the first for four projects I will complete while attending web development immersion @GA_LA.
 
-The winner logic is in place but still need to finish the styling.
+Status:
+
+> Structure and Styling: COMPLETE
+> Winner logic and scrolling function: COMPLETE
+> Firebase: PENDING
+
+
