@@ -5,12 +5,20 @@ myApp.controller("myController", function ($scope, $firebase) {
 //-------------- Firebase ----------------------------------------------------------------------
 
     var tttRef = new Firebase("https://bsp-wdi-ttt.firebaseio.com");
+    var ButtonClick = new Firebase("https://bsp-wdi-ttt.firebaseio.com//remoteButtonClick");
 
-    $scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
+    $scope.remoteButtonClick = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com//remoteButtonClick"));
+    // $scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
     $scope.remoteClickCount = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickCount"));
+    
+    $scope.remoteButtonClick.$bind($scope, "buttonClick");
+    $scope.$watch('buttonClick', function(){
+        console.log('Finally');
+    });
+
     $scope.remoteClickCount.$bind($scope, "clickCount");
     $scope.$watch('clickCount', function(){
-        console.log("Rad!");
+        //console.log("Rad!");
     });
     
     // $scope.remoteClickBtn.$bind($scope,"clickBtn");
@@ -23,8 +31,6 @@ myApp.controller("myController", function ($scope, $firebase) {
     // $scope.$watch('clickBtn', function(){
 
     // });
-    
-    $scope.ttt = $firebase(tttRef);
 
 
     // $scope.updateClick  = function() {
@@ -54,14 +60,14 @@ myApp.controller("myController", function ($scope, $firebase) {
         $scope.player -=1; //This causes player not to be 0
         $scope.clickCount +=1; //This is incrementing the click counter
         document.getElementById("clicker").innerHTML = $scope.clickCount;
-        $scope.winner();
+        $scope.winner(); //This checks for a winner
       } else {
         document.getElementById(btn).value = "O";
         document.getElementById(btn).disabled = "disabled"; //This is to prevent multiple clicks
         $scope.player +=1; //This causes player to be 1 again
         $scope.clickCount +=1; //This is incrementing the click counter
         document.getElementById("clicker").innerHTML = $scope.clickCount;
-        $scope.winner(); 
+        $scope.winner(); //This checks for a winner
         } 
       }
     
@@ -70,8 +76,8 @@ myApp.controller("myController", function ($scope, $firebase) {
       if (document.getElementById("btn1").value == "X" && 
         document.getElementById("btn2").value == "X" && 
         document.getElementById("btn3").value == "X" ) { 
-        alert($scope.player1 + " is the Winner!");
-        alert("Game Over! Please Play again : )");
+        alert($scope.player1 + " is the winner!");
+        alert("Game over! Please play again : )");
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -80,8 +86,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn1").value == "X" && 
         document.getElementById("btn4").value == "X" && 
         document.getElementById("btn7").value == "X" ) {
-        alert($scope.player1 + " is the Winner!");
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!");
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -90,8 +96,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn7").value == "X" && 
         document.getElementById("btn8").value == "X" && 
         document.getElementById("btn9").value == "X" ) {
-        alert($scope.player1 + " is the Winner!");
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!");
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -100,8 +106,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn3").value == "X" && 
         document.getElementById("btn6").value == "X" && 
         document.getElementById("btn9").value == "X" ) {
-        alert($scope.player1 + " is the Winner!");
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!");
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -110,8 +116,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn1").value == "X" && 
         document.getElementById("btn5").value == "X" && 
         document.getElementById("btn9").value == "X" ) {
-        alert($scope.player1 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!"); 
+        alert("Game over! please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -120,8 +126,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn3").value == "X" && 
         document.getElementById("btn5").value == "X" && 
         document.getElementById("btn7").value == "X" ) {
-        alert($scope.player1 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -130,8 +136,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn2").value == "X" && 
         document.getElementById("btn5").value == "X" && 
         document.getElementById("btn8").value == "X" ) {
-        alert($scope.player1 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -140,8 +146,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn4").value == "X" && 
         document.getElementById("btn5").value == "X" && 
         document.getElementById("btn6").value == "X" ) {
-        alert($scope.player1 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player1 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -153,8 +159,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn1").value == "O" && 
         document.getElementById("btn2").value == "O" && 
         document.getElementById("btn3").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -163,8 +169,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn1").value == "O" && 
         document.getElementById("btn4").value == "O" && 
         document.getElementById("btn7").value == "O" ) {
-        alert($scope.player2 + " is the Winner!");         
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!");         
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -173,8 +179,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn7").value == "O" && 
         document.getElementById("btn8").value == "O" && 
         document.getElementById("btn9").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -183,8 +189,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn3").value == "O" && 
         document.getElementById("btn6").value == "O" && 
         document.getElementById("btn9").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -193,8 +199,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn2").value == "O" && 
         document.getElementById("btn5").value == "O" && 
         document.getElementById("btn8").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -203,8 +209,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn4").value == "O" && 
         document.getElementById("btn5").value == "O" && 
         document.getElementById("btn6").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -213,8 +219,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn1").value == "O" && 
         document.getElementById("btn5").value == "O" && 
         document.getElementById("btn9").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();
@@ -223,8 +229,8 @@ myApp.controller("myController", function ($scope, $firebase) {
         (document.getElementById("btn3").value == "O" && 
         document.getElementById("btn5").value == "O" && 
         document.getElementById("btn7").value == "O" ) {
-        alert($scope.player2 + " is the Winner!"); 
-        alert("Game Over! Please Play again : )")
+        alert($scope.player2 + " is the winner!"); 
+        alert("Game over! Please play again : )")
         clearBoard();
         resetPlayer();
         resetClickCount();

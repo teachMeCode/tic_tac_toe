@@ -70,6 +70,10 @@ header p {
   font-family: 'Lobster', cursive;
 }
 
+#player-1 {
+  color: white;
+}
+
 .player-2 {
   width: 50%;
   float: left;
@@ -84,6 +88,10 @@ header p {
   text-align: center;
   margin-top: 10px;
   font-family: 'Lobster', cursive;
+}
+
+#player-2 {
+  color: white;
 }
 
 .down-arrow {
