@@ -1,3 +1,4 @@
+//Tic Tac Toe app control
 var myApp = angular.module("myApp", ["firebase"]);
 
 myApp.controller("myController", function ($scope, $firebase) {
@@ -8,7 +9,8 @@ myApp.controller("myController", function ($scope, $firebase) {
     var ButtonClick = new Firebase("https://bsp-wdi-ttt.firebaseio.com//remoteButtonClick");
 
     $scope.remoteButtonClick = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com//remoteButtonClick"));
-    // $scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
+    //$scope.remoteClickBtn = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickBtn"));
+    //$scope.remoteClickCount = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickCount"));
     $scope.remoteClickCount = $firebase(new Firebase("https://bsp-wdi-ttt.firebaseio.com/" + "/clickCount"));
     
     $scope.remoteButtonClick.$bind($scope, "buttonClick");
@@ -244,22 +246,4 @@ myApp.controller("myController", function ($scope, $firebase) {
       }
     } //End of winner 
 
-    
-    // $scope.clearBoard = function() {
-    //   document.getElementById('btn1').value = "";
-    //   document.getElementById('btn2').value = "";
-    //   document.getElementById('btn3').value = "";
-    //   document.getElementById('btn4').value = "";
-    //   document.getElementById('btn5').value = "";
-    //   document.getElementById('btn6').value = "";
-    //   document.getElementById('btn7').value = "";
-    //   document.getElementById('btn8').value = "";
-    //   document.getElementById('btn9').value = "";
-    //   //$scope.load();
-    // } 
-
-    //This refreshes the board
-    // $scope.load = function() {
-    //   location.reload(true);
-    // }
 }); //This is the end

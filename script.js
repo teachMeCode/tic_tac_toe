@@ -1,4 +1,4 @@
-//Tic Tac Toe
+//Tic Tac Toe clear board
 
 // This function clears the board once there is a winner
 function clearBoard() {
